@@ -4,7 +4,7 @@ import { Container, Loader } from 'semantic-ui-react';
 import ScrapeSection from '../components/ScrapeSection';
 import MembersTableSection from '../components/MembersTableSection';
 import axios from 'axios';
-import { apiUrl } from '../config/index';
+import { apiUrl } from '../config';
 
 export class Dashboard extends Component {
   state = {
