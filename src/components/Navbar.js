@@ -1,5 +1,5 @@
-import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import React from 'react';
+import { Menu } from 'semantic-ui-react';
 
 function Navbar() {
   const [activeItem, setActiveItem] = React.useState('home');
@@ -18,4 +18,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;

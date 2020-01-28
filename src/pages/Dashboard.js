@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Container, Loader } from 'semantic-ui-react';
 import ScrapeSection from '../components/ScrapeSection';
 import MembersTableSection from '../components/MembersTableSection';
@@ -10,9 +9,6 @@ export class Dashboard extends Component {
   state = {
     isLoading: false,
     membersList: []
-  }
-  static propTypes = {
-    membersList: PropTypes.array
   }
 
   componentDidMount() {

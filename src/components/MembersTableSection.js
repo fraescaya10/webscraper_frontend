@@ -1,5 +1,7 @@
 import React from 'react';
-import { Table, Header, Icon, Menu, Segment, Select} from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { Table, Header, Icon, Segment, Select } from 'semantic-ui-react';
+import Paginator from './Paginator';
 
 function MembersTableSection({ membersData }) {
 
@@ -82,38 +84,20 @@ function MembersTableSection({ membersData }) {
         <Table.Footer>
           <Table.Row>
             <Table.HeaderCell colSpan='5'>
-              <Menu floated='right' pagination>
-                <Menu.Item
-                  as='a'
-                  icon
-                  onClick={() => setCurrentPage(1)}
-                  disabled={currentPage === 1}>
-                  <Icon name='chevron left' />
-                </Menu.Item>
-                {
-                  pagesList.map((number, index) => (
-                    <Menu.Item
-                      as='a'
-                      key={index}
-                      onClick={() => setCurrentPage(number)}
-                      active={currentPage === number}>
-                      {number}
-                    </Menu.Item>)
-                  )
-                }
-                <Menu.Item
-                  as='a'
-                  icon
-                  onClick={() => setCurrentPage(totalPages)}
-                  disabled={currentPage === totalPages}>
-                  <Icon name='chevron right' />
-                </Menu.Item>
-              </Menu>
+              <Paginator
+                pagesList={pagesList}
+                currentPage={currentPage}
+                totalPages={totalPages}
+                setCurrentPage={setCurrentPage} />
             </Table.HeaderCell>
           </Table.Row>
         </Table.Footer>
       </Table>
-    </Segment>)
+    </Segment>);
 }
 
-export default MembersTableSection
+MembersTableSection.propTypes = {
+  membersData: PropTypes.array.isRequired
+};
+
+export default MembersTableSection;

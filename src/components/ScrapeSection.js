@@ -1,5 +1,6 @@
-import React from 'react'
-import { Button, Segment, Header, Icon } from 'semantic-ui-react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Segment, Header, Icon } from 'semantic-ui-react';
 
 function ScrapeSection({ onClickStartScrape }) {
   return (
@@ -10,7 +11,11 @@ function ScrapeSection({ onClickStartScrape }) {
     </Header>
       <Button primary onClick={onClickStartScrape}>Start Scraping</Button>
     </Segment>
-  )
+  );
 }
 
-export default ScrapeSection
+ScrapeSection.propTypes = {
+  onClickStartScrape: PropTypes.func.isRequired
+};
+
+export default ScrapeSection;
